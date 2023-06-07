@@ -34,7 +34,7 @@
 
 package edu.mit.ll.nics.processor.collab.feed;
 
-import com.vividsolutions.jts.geom.Envelope;
+import org.locationtech.jts.geom.Envelope;
 import edu.mit.ll.nics.common.entity.CollabRoom;
 import edu.mit.ll.nics.common.entity.Incident;
 import edu.mit.ll.nics.common.geoserver.api.GeoServer;

@@ -30,8 +30,6 @@
 package edu.mit.ll.nics.processor.test.incorg;
 
 import org.apache.camel.Endpoint;
-import org.apache.camel.component.mock.MockEndpoint;
-import org.apache.camel.spi.PropertyConfigurer;
 import org.apache.camel.test.spring.CamelSpringTestSupport;
 import org.junit.Test;
 import org.springframework.context.support.AbstractApplicationContext;

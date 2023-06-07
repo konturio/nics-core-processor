@@ -31,18 +31,8 @@
 -->
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-	<bean id="log4jInitialization" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-		<property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
-		<property name="targetMethod" value="initLogging" />
-		<property name="arguments">
-			<list>
-				<value>config/log4j.properties</value>
-			</list>
-		</property>
-	</bean>
-
 	<!-- Property file for GMLToDBProcessor bean -->
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
 		<property name="location">
 			<value>config/collab-feed-manager.properties</value>
 		</property>
@@ -79,16 +69,16 @@
 				
 	</camelContext>
 
-    <bean id="scheduledTimerTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
-	    <property name="timerTask" ref="collabfeedmanager"></property>
+    <bean id="scheduledTimerTask" class="org.springframework.scheduling.concurrent.ScheduledExecutorTask">
+	    <property name="runnable" ref="collabfeedmanager"></property>
 	    <property name="period" value="${syncInterval}"></property>
 	    <property name="delay" value="10000" />
 	</bean>
 	
-	<bean class="org.springframework.scheduling.timer.TimerFactoryBean">
-	    <property name="scheduledTimerTasks">
+	<bean class="org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean">
+	    <property name="ScheduledExecutorTasks">
 	        <list>
-	            <ref local="scheduledTimerTask"></ref>
+	            <ref bean="scheduledTimerTask"></ref>
 	        </list>
 	    </property>
 	</bean>
