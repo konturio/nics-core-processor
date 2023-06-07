@@ -29,8 +29,8 @@
  */
 package edu.mit.ll.nics.processor.gml.consumer;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Point;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Timestamp;
@@ -45,8 +45,8 @@ import org.apache.camel.Processor;
 import org.apache.commons.lang.time.StopWatch;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.geotools.GML;
-import org.geotools.GML.Version;
+import org.geotools.wfs.GML;
+import org.geotools.wfs.GML.Version;
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
 import org.geotools.data.DefaultTransaction;

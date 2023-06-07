@@ -40,7 +40,7 @@
 	<parent>
 		<groupId>edu.mit.ll.nics.processor</groupId>
 		<artifactId>nics-core-processor</artifactId>
-		<version>6.4-SNAPSHOT</version>
+		<version>7.0.9-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
@@ -121,7 +121,7 @@
 			<artifactId>hibernate-spatial</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.postgis</groupId>
+			<groupId>net.postgis</groupId>
 			<artifactId>postgis-jdbc</artifactId>
 		</dependency>
 		<dependency>
@@ -136,7 +136,10 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.locationtech.jts</groupId>
+			<artifactId>jts-core</artifactId>
+		</dependency>
 
 
 		<!-- MITLL dependencies -->

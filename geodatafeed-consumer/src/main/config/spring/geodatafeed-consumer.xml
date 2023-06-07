@@ -31,18 +31,8 @@
 -->
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-	<bean id="log4jInitialization" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-		<property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
-		<property name="targetMethod" value="initLogging" />
-		<property name="arguments">
-			<list>
-				<value>config/log4j.properties</value>
-			</list>
-		</property>
-	</bean>
-
 	<!-- Property file for GMLToDBProcessor bean -->
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
 		<property name="location">
 			<value>config/geodatafeed-consumer.properties</value>
 		</property>

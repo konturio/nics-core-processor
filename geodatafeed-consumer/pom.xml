@@ -40,7 +40,7 @@
 	<parent>
 		<groupId>edu.mit.ll.nics.processor</groupId>
 		<artifactId>nics-core-processor</artifactId>
-		<version>6.4-SNAPSHOT</version>
+		<version>7.0.9-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
@@ -142,6 +142,14 @@
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.locationtech.jts</groupId>
+			<artifactId>jts-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-wfs-ng</artifactId>
 		</dependency>
 	</dependencies>
 </project>
